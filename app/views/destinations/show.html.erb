@@ -23,7 +23,7 @@
         <div class="text">
           <h3><%= spot.name %></h3>
           <p class="description"><%= spot.description %></p>
-          <p class="url"><%= link_to spot.url, spot.url %></p>
+          <p class="url"><span><i class="fa fa-external-link" aria-hidden="true"></i> <%= link_to spot.url, spot.url, target: '_blank' %></span></p>
         </div>
       </div>
     <% end %>

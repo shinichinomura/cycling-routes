@@ -81,6 +81,8 @@ body[data-contoller_name="destinations"][data-action_name="show"] {
 
       p.url {
         font-size: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
     }
 
