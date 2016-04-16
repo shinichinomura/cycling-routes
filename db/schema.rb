@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160416100100) do
   create_table "spots", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
-    t.string   "url",         limit: 255
+    t.string   "url",         limit: 2048
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end

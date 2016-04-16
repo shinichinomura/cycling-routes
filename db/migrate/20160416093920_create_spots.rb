@@ -3,7 +3,7 @@ class CreateSpots < ActiveRecord::Migration
     create_table :spots do |t|
       t.string :name
       t.text :description
-      t.string :url
+      t.string :url, limit: 2048
 
       t.timestamps null: false
     end
