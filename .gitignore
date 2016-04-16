@@ -17,5 +17,6 @@
 /tmp
 
 vendor/bundle
+public/uploads
 
 /config/database.yml
