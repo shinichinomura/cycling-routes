@@ -22,7 +22,25 @@ html {
 
 #Header {
   padding: .5em;
-  border-bottom: 1px solid #ccc;
+  margin-bottom: 1em;
+  position: relative;
+  background-color: #003;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+
+  i {
+    position: absolute;
+    color: #fff;
+    opacity: 0.5;
+  }
+
+  span.site_name {
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Lobster Two', cursive;
+  }
 }
 
 #MainContent {
@@ -33,7 +51,7 @@ h1 {
   text-align: center;
   margin: .25em;
   padding: .25em .5em;
-  font-size: 140%;
+  font-size: 130%;
 }
 
 h2 {
