@@ -6,7 +6,7 @@
 
 <p><%= @dest.description %></p>
 
-<h2><%= @dest.name %>の場所</h2>
+<h2>現在地から<%= @dest.name %>への行き方</h2>
 <div id="RouteMap" data-latitude="<%= @dest.latitude %>" data-longitude="<%= @dest.longitude %>" data-title="<%= @dest.name %>"></div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
