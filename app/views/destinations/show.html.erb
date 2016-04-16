@@ -1,0 +1,26 @@
+<% content_for :title do %><%= @dest.name %><% end %>
+
+<h1><%= @dest.name %></h1>
+
+<div class="cover_photo" style="background-image: url('<%= @dest.photo %>');"></div>
+
+<p><%= @dest.description %></p>
+
+<h2><%= @dest.name %>の場所</h2>
+<div id="RouteMap" data-latitude="<%= @dest.latitude %>" data-longitude="<%= @dest.longitude %>" data-title="<%= @dest.name %>"></div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+
+<h2><%= @dest.name %>周辺のおすすめスポット</h2>
+
+<% @dest.spots.each do |spot| %>
+  <div class="spot">
+    <div class="photo">
+    </div>
+    <div class="text">
+      <h3><%= spot.name %></h3>
+      <p class="description"><%= spot.description %></p>
+      <p class="url"><%= link_to spot.url, spot.url %></p>
+    </div>
+  </div>
+<% end %>

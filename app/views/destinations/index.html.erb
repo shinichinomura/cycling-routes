@@ -5,7 +5,7 @@
   <% @destinations.each do |dest| %>
     <div class="destination">
       <div class="photo" style="background-image: url('<%= dest.photo %>');"></div>
-      <h2><%= dest.name %></h2>
+      <h2><%= link_to dest.name, destination_path(dest) %></h2>
       <p><%= dest.description %></p>
     </div>
   <% end %>

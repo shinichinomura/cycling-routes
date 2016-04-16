@@ -4,5 +4,6 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    @dest = Destination.find(params[:id])
   end
 end

@@ -26,3 +26,58 @@ div.destination {
     margin: .5em 1em;
   }
 }
+
+body[data-contoller_name="destinations"][data-action_name="show"] {
+  div.cover_photo {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  #RouteMap {
+    height: 240px;
+  }
+
+  div.spot {
+    margin: .5em .5em 1.5em .5em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    border-radius: .25em;
+    overflow: hidden;
+
+    div.photo {
+      float: left;
+      margin: 10px;
+      width: 120px;
+      height: 120px;
+      background-color: #eee;
+    }
+
+    div.text {
+      padding-left: 140px;
+      padding-right: 1em;
+
+      h3 {
+        margin-top: 10px;
+        margin-bottom: .5em;
+        font-size: 105%;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 0;
+        padding: 0 0 10px 0;
+      }
+
+      p.url {
+        font-size: 80%;
+      }
+    }
+
+    div.text:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+}
