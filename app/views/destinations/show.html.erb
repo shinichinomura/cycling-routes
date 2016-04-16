@@ -12,16 +12,18 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 
-<h2><%= @dest.name %>周辺のおすすめスポット</h2>
+<% if @dest.spots.present? %>
+  <h2><%= @dest.name %>周辺のおすすめスポット</h2>
 
-<% @dest.spots.each do |spot| %>
-  <div class="spot">
-    <div class="photo">
+  <% @dest.spots.each do |spot| %>
+    <div class="spot">
+      <div class="photo">
+      </div>
+      <div class="text">
+        <h3><%= spot.name %></h3>
+        <p class="description"><%= spot.description %></p>
+        <p class="url"><%= link_to spot.url, spot.url %></p>
+      </div>
     </div>
-    <div class="text">
-      <h3><%= spot.name %></h3>
-      <p class="description"><%= spot.description %></p>
-      <p class="url"><%= link_to spot.url, spot.url %></p>
-    </div>
-  </div>
+  <% end %>
 <% end %>
