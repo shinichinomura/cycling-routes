@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416092229) do
+ActiveRecord::Schema.define(version: 20160416094448) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 20160416092229) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "destination_spots", force: :cascade do |t|
+    t.integer  "destination_id", limit: 4
+    t.integer  "spot_id",        limit: 4
+    t.integer  "priority",       limit: 4, default: 0
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "destination_spots", ["destination_id"], name: "index_destination_spots_on_destination_id", using: :btree
+  add_index "destination_spots", ["spot_id"], name: "index_destination_spots_on_spot_id", using: :btree
+
   create_table "destinations", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "address",     limit: 255
@@ -54,4 +65,14 @@ ActiveRecord::Schema.define(version: 20160416092229) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "spots", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "url",         limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_foreign_key "destination_spots", "destinations"
+  add_foreign_key "destination_spots", "spots"
 end
