@@ -32,14 +32,19 @@ $ ->
           }
 
           gm_directions_service.route(gm_directions_request, (result, status) ->
+            # console.log(result)
             if status == google.maps.DirectionsStatus.OK
-              gm_directions_display.setDirections(result);
+              gm_directions_display.setDirections(result)
+
+              distance = result.routes[0].legs[0].distance.text
+              $('div.distance span.distance').text(distance)
             else
               console.log('ルートを取得できませんでした。')
               gm_map.setOptions(
                 center: dest_pos,
                 zoom: 12
               )
+              $('div.distance span.distance').text("取得に失敗しました")
           )
         ,
         (error) ->

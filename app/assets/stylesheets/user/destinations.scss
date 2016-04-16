@@ -35,6 +35,17 @@ body[data-contoller_name="destinations"][data-action_name="show"] {
     background-position: center center;
   }
 
+  div.distance {
+    text-align: center;
+    font-size: 90%;
+    background-color: #eee;
+    padding: .25em;
+    margin-bottom: .5em;
+
+    span.distance {
+    }
+  }
+
   #RouteMap {
     height: 360px;
   }
