@@ -1,12 +1,15 @@
 <% content_for :title do %>東京都内からのおすすめサイクリングルート一覧<% end %>
 
 <h1>東京都内からのおすすめサイクリングルート一覧</h1>
-<div class="destinations">
-  <% @destinations.each do |dest| %>
-    <div class="destination">
-      <div class="photo" style="background-image: url('<%= dest.photo %>');"></div>
-      <h2><%= link_to dest.name, destination_path(dest) %></h2>
-      <p><%= dest.description %></p>
-    </div>
-  <% end %>
+
+<div id="MainContent">
+  <div class="destinations">
+    <% @destinations.each do |dest| %>
+      <div class="destination">
+        <div class="photo" style="background-image: url('<%= dest.photo %>');"></div>
+        <h2><%= link_to dest.name, destination_path(dest) %></h2>
+        <p><%= dest.description %></p>
+      </div>
+    <% end %>
+  </div>
 </div>

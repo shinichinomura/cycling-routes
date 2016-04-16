@@ -15,7 +15,20 @@
 
   <body data-contoller_name="<%= controller.controller_name %>" data-action_name="<%= controller.action_name %>">
 
-    <%= yield %>
+    <div id="sb-site">
+      <div id="Header">
+        <i id="MenuHandle" class="fa fa-2x fa-bars" aria-hidden="true"></i>
+      </div>
+      <%= yield %>
+    </div>
+
+    <div class="sb-slidebar sb-left">
+      <nav>
+        <ul>
+          <li><%= link_to destinations_path do %><i class="fa fa-heart" aria-hidden="true"></i> おすすめサイクリングルート<% end %></li>
+        </ul>
+      </nav>
+    </div>
 
   </body>
 </html>

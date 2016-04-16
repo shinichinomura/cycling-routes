@@ -12,11 +12,21 @@
  *
  *= require_tree ./user
  *= require_self
+ *= require font-awesome
  */
 
 html {
   color: #333;
   font-size: 14px;
+}
+
+#Header {
+  padding: .5em;
+  border-bottom: 1px solid #ccc;
+}
+
+#MainContent {
+  margin: auto 1em;
 }
 
 h1 {
@@ -25,3 +35,22 @@ h1 {
   padding: .25em .5em;
 }
 
+div.sb-slidebar {
+  color: #ccc;
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      padding: .5em;
+      border-bottom: 1px solid #666;
+
+      a {
+        text-decoration: none;
+        color: #ccc;
+      }
+    }
+  }
+}

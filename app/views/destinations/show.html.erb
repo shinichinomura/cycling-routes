@@ -4,26 +4,28 @@
 
 <div class="cover_photo" style="background-image: url('<%= @dest.photo %>');"></div>
 
-<p><%= @dest.description %></p>
+<div id="MainContent">
+  <p><%= @dest.description %></p>
 
-<h2>現在地から<%= @dest.name %>への行き方</h2>
-<div class="distance">距離：<span class="distance">（計算中...）</div></div>
-<div id="RouteMap" data-latitude="<%= @dest.latitude %>" data-longitude="<%= @dest.longitude %>" data-title="<%= @dest.name %>"></div>
+  <h2>現在地から<%= @dest.name %>への行き方</h2>
+  <div class="distance">距離：<span class="distance">（計算中...）</div>
+  <div id="RouteMap" data-latitude="<%= @dest.latitude %>" data-longitude="<%= @dest.longitude %>" data-title="<%= @dest.name %>"></div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 
-<% if @dest.spots.present? %>
-  <h2><%= @dest.name %>周辺のおすすめスポット</h2>
+  <% if @dest.spots.present? %>
+    <h2><%= @dest.name %>周辺のおすすめスポット</h2>
 
-  <% @dest.spots.each do |spot| %>
-    <div class="spot">
-      <div class="photo">
+    <% @dest.spots.each do |spot| %>
+      <div class="spot">
+        <div class="photo">
+        </div>
+        <div class="text">
+          <h3><%= spot.name %></h3>
+          <p class="description"><%= spot.description %></p>
+          <p class="url"><%= link_to spot.url, spot.url %></p>
+        </div>
       </div>
-      <div class="text">
-        <h3><%= spot.name %></h3>
-        <p class="description"><%= spot.description %></p>
-        <p class="url"><%= link_to spot.url, spot.url %></p>
-      </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

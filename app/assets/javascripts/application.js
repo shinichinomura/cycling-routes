@@ -13,3 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./user
+
+$(document).ready(function(){
+  $.slidebars();
+
+  $('#MenuHandle').on('click', function(){
+      $.slidebars.open('left');
+  });
+});
+

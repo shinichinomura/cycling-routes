@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div.destination {
-  margin: .5em .5em 1.5em .5em;
+  margin: .5em 0 1.5em 0;
   padding-bottom: .5em;
   box-shadow: 0 1px 4px rgba(0,0,0,0.3);
   border-radius: .25em;
@@ -51,7 +51,7 @@ body[data-contoller_name="destinations"][data-action_name="show"] {
   }
 
   div.spot {
-    margin: .5em .5em 1.5em .5em;
+    margin: .5em 0 1.5em 0;
     box-shadow: 0 1px 4px rgba(0,0,0,0.3);
     border-radius: .25em;
     overflow: hidden;
