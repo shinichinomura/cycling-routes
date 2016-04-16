@@ -36,8 +36,6 @@ gem 'cancan'
 gem 'draper'
 gem 'pundit'
 
-gem 'foundation-rails'
-
 gem 'carrierwave'
 gem 'rmagick'
 
