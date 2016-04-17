@@ -1,0 +1,18 @@
+<h1>現在地を設定する</h1>
+
+<div id="MainContent">
+  <%= form_tag(controller: :current_locations, action: 'create') do %>
+    <p>
+    <%= text_field_tag :current_location %>
+    </p>
+    <p class="suggested_address">
+    現在地を「<span class="suggested_address"></span>」にセットします。よろしければ「送信」ボタンを押してください。
+    </p>
+    <p>
+    <%= hidden_field_tag :suggested_address %>
+    <%= submit_tag '送信', disabled: 'disabled' %>
+    </p>
+  <% end %>
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=addListener"></script>

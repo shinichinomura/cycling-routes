@@ -22,38 +22,45 @@ $ ->
       title: $map.data('title')
     })
 
-    if navigator.geolocation 
-      navigator.geolocation.getCurrentPosition(
-        (position) ->
-          gm_directions_request = {
-            origin: { lat: position.coords.latitude, lng: position.coords.longitude },
-            destination: dest_pos,
-            travelMode: google.maps.TravelMode.DRIVING,
-            avoidHighways: true,
-            avoidTolls: true
-          }
+    setDirection = (dept_pos) ->
+      gm_directions_request = {
+        origin: dept_pos,
+        destination: dest_pos,
+        travelMode: google.maps.TravelMode.DRIVING,
+        avoidHighways: true,
+        avoidTolls: true
+      }
 
-          gm_directions_service.route(gm_directions_request, (result, status) ->
-            # console.log(result)
-            if status == google.maps.DirectionsStatus.OK
-              gm_directions_display.setDirections(result)
+      gm_directions_service.route(gm_directions_request, (result, status) ->
+        # console.log(result)
+        if status == google.maps.DirectionsStatus.OK
+          gm_directions_display.setDirections(result)
 
-              distance = result.routes[0].legs[0].distance.text
-              $('div.distance span.distance').text(distance)
-            else
-              console.log('ルートを取得できませんでした。')
-              gm_map.setOptions(
-                center: dest_pos,
-                zoom: 12
-              )
-              $('div.distance span.distance').text("取得に失敗しました")
+          distance = result.routes[0].legs[0].distance.text
+          $('div.distance span.distance').text(distance)
+        else
+          console.log('ルートを取得できませんでした。')
+          gm_map.setOptions(
+            center: dest_pos,
+            zoom: 12
           )
-        ,
-        (error) ->
-          console.log(error)
+          $('div.distance span.distance').text("取得に失敗しました")
       )
+
+    if gon.current_location
+      console.log(gon.current_location)
+      setDirection(gon.current_location)
     else
-      console.log('Geolocation API を利用できません。')
+      if navigator.geolocation 
+        navigator.geolocation.getCurrentPosition(
+          (position) ->
+            setDirection({ lat: position.coords.latitude, lng: position.coords.longitude })
+          ,
+          (error) ->
+            console.log(error)
+        )
+      else
+        console.log('Geolocation API を利用できません。')
 
     # スポットを「地図上に表示」
     $('span.display_in_map').on('click', ->

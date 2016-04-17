@@ -1,0 +1,41 @@
+// Place all the styles related to the current_locations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body[data-contoller_name="current_locations"][data-action_name="new"] {
+  form {
+    input[type=text] {
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-color: #ccc;
+      background-color: #f9f9f9;
+      padding: .5em;
+      font-size: 160%;
+    }
+
+    input[type=submit] {
+      border-radius: 0;
+      -webkit-box-sizing: content-box;
+      -webkit-appearance: button;
+      appearance: button;
+      border: none;
+      box-sizing: border-box;
+      background-color: #eee;
+      padding: .25em 1em;
+      font-size: 120%;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    p.suggested_address {
+      display: none;
+    }
+
+    span#suggested_address {
+      font-weight: bold;
+    }
+  }
+}

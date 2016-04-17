@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'current_locations/new'
+
   get 'destinations/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -59,4 +61,7 @@ Rails.application.routes.draw do
   #   end
 
   resources :destinations, only: [:index, :show]
+
+  get 'current_locations/new' => 'current_locations#new', as: :new_current_location
+  post 'current_locations' => 'current_locations#create'
 end

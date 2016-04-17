@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag "application", media: 'all' %>
     <%= stylesheet_link_tag "Slidebars/dist/slidebars.min.css" %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster+Two:700" %>
+
+     <%= Gon::Base.render_data %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "Slidebars/dist/slidebars.min.js" %>
     <%= csrf_meta_tags %>
@@ -28,6 +30,7 @@
       <nav>
         <ul>
           <li><%= link_to destinations_path do %><i class="fa fa-heart" aria-hidden="true"></i> おすすめサイクリングルート<% end %></li>
+          <li><%= link_to new_current_location_path do %><i class="fa fa-location-arrow" aria-hidden="true"></i> 現在地を設定する<% end %></li>
         </ul>
       </nav>
     </div>
