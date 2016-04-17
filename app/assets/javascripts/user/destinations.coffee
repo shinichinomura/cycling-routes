@@ -60,10 +60,7 @@ $ ->
       $anchor = $(@)
 
       unless $anchor.hasClass('done')
-        # TODO: 緯度経度を持っている場合はそれを使うようにする
-        gm_geocoder.geocode({ address: $(@).data('name') }, (results, status) ->
-          location = results[0].geometry.location
-
+        add_marker = (location) ->
           marker = new google.maps.Marker({
             position: location,
             map: gm_map,
@@ -79,5 +76,13 @@ $ ->
           )
 
           $anchor.addClass('done')
-        )
+
+        if $(@).data('latitude') && $(@).data('longitude')
+          add_marker({ lat: $(@).data('latitude'), lng: $(@).data('longitude') })
+        else
+          gm_geocoder.geocode({ address: $(@).data('name') }, (results, status) ->
+            console.log(results)
+            location = results[0].geometry.location
+            add_marker(location)
+          )
     )
