@@ -3,22 +3,24 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  $map = $('#RouteMap')
+
   window.initMap = ->
-    $map = $('#RouteMap')
     dest_pos = { lat: $map.data('latitude'), lng: $map.data('longitude') }
     
     gm_map = new google.maps.Map($map.get(0))
+    gm_geocoder = new google.maps.Geocoder()
 
-    gm_directions_display = new google.maps.DirectionsRenderer();
+    gm_directions_display = new google.maps.DirectionsRenderer()
     gm_directions_display.setMap(gm_map);
 
-    gm_directions_service = new google.maps.DirectionsService();
+    gm_directions_service = new google.maps.DirectionsService()
 
     new google.maps.Marker({
       position: dest_pos,
       map: gm_map,
       title: $map.data('title')
-    });
+    })
 
     if navigator.geolocation 
       navigator.geolocation.getCurrentPosition(
@@ -53,3 +55,18 @@ $ ->
     else
       console.log('Geolocation API を利用できません。')
 
+    # スポットを「地図上に表示」
+    $('span.display_in_map').on('click', ->
+      $anchor = $(@)
+
+      unless $anchor.hasClass('done')
+        # TODO: 緯度経度を持っている場合はそれを使うようにする
+        gm_geocoder.geocode({ address: $(@).data('name') }, (results, status) ->
+          new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: gm_map,
+            label: $anchor.data('name')[0..1],
+          })
+          $anchor.addClass('done')
+        )
+    )

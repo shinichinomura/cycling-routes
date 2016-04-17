@@ -94,6 +94,20 @@ body[data-contoller_name="destinations"][data-action_name="show"] {
       }
     }
 
+    span.display_in_map {
+      font-size: 90%;
+      background: #EEE;
+      border: 1px solid #DDD;
+      border-radius: .25em;
+      color: #111;
+      width: 100px;
+      padding: .5em 1em;
+
+      &.done {
+        color: #ccc;
+      }
+    }
+
     div.text:after {
       display: block;
       content: "";
