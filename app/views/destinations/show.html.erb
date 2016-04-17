@@ -18,9 +18,10 @@
 
     <% @dest.spots.each do |spot| %>
       <div class="spot">
-        <div class="photo">
-        </div>
-        <div class="text">
+        <% if spot.photo.present? %>
+          <div class="photo" style="background-image: url('<%= spot.photo %>');"></div>
+        <% end %>
+        <div class="text <% if spot.photo.present? %>with_photo<% else %>without_photo<% end %>">
           <h3><%= spot.name %></h3>
           <p class="description"><%= spot.description %></p>
           <p class="url"><span><i class="fa fa-external-link" aria-hidden="true"></i> <%= link_to spot.url, spot.url, target: '_blank' %></span></p>
