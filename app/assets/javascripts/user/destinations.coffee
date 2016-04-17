@@ -62,11 +62,22 @@ $ ->
       unless $anchor.hasClass('done')
         # TODO: 緯度経度を持っている場合はそれを使うようにする
         gm_geocoder.geocode({ address: $(@).data('name') }, (results, status) ->
-          new google.maps.Marker({
-            position: results[0].geometry.location,
+          location = results[0].geometry.location
+
+          marker = new google.maps.Marker({
+            position: location,
             map: gm_map,
             label: $anchor.data('name')[0..1],
           })
+
+          info_window = new google.maps.InfoWindow({
+            content: $anchor.data('name'),
+          })
+          
+          google.maps.event.addListener(marker, 'click', ->
+            info_window.open(gm_map, marker)
+          )
+
           $anchor.addClass('done')
         )
     )
