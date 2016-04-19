@@ -35,5 +35,6 @@
       </nav>
     </div>
 
+    <%= render partial: 'shared_partials/ga_tag' if Rails.env.production? %>
   </body>
 </html>
