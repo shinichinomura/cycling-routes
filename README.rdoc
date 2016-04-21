@@ -1,28 +1,13 @@
-== README
+README
+==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+環境変数
+--
+| キー | 値 |
+|:-:|:-:|
+| CYCLING_ROUTES_CARRIER_WAVE_USE_S3 | 「1」ならば、S3 に画像を保存する |
+| CYCLING_ROUTES_AWS_ACCESS_KEY | API Access Key |
+| CYCLING_ROUTES_AWS_SECRET_ACCESS_KEY | API Secret Access Key |
+| CYCLING_ROUTES_FOG_DIRECTORY | S3 のバケット名 |
+| CYCLING_ROUTES_CARRIER_WAVE_ASSET_HOST | CloudFront の Domain Name |
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
