@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory = ENV['CYCLING_ROUTES_FOG_DIRECTORY'] if ENV['CYCLING_ROUTES_CARRIER_WAVE_FOG_DIRECTORY'].present?
+  config.fog_directory = ENV['CYCLING_ROUTES_CARRIER_WAVE_FOG_DIRECTORY'] if ENV['CYCLING_ROUTES_CARRIER_WAVE_FOG_DIRECTORY'].present?
 
   config.asset_host = ENV['CYCLING_ROUTES_CARRIER_WAVE_ASSET_HOST'] if ENV['CYCLING_ROUTES_CARRIER_WAVE_ASSET_HOST'].present?
 end
