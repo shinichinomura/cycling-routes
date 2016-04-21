@@ -5,7 +5,7 @@
 <div class="cover_photo" style="background-image: url('<%= @dest.photo %>');"></div>
 
 <div id="MainContent">
-  <p><%= @dest.description %></p>
+  <%= simple_format @dest.description %>
 
   <h2>現在地から<%= @dest.name %>への行き方</h2>
   <div class="distance">距離：<span class="distance">（計算中...）</div>
@@ -23,7 +23,7 @@
         <% end %>
         <div class="text <% if spot.photo.present? %>with_photo<% else %>without_photo<% end %>">
           <h3><%= spot.name %></h3>
-          <p class="description"><%= spot.description %></p>
+          <%= simple_format spot.description, class: 'description' %></p>
           <p class="display_in_map"><span class="display_in_map", data-name="<%= spot.name %>" data-latitude="<%= spot.latitude %>", data-longitude="<%= spot.longitude %>"><i class="fa fa-map-marker" aria-hidden="true"></i> 地図上に表示</span></p>
           <p class="url"><span><i class="fa fa-external-link" aria-hidden="true"></i> <%= link_to spot.url, spot.url, target: '_blank' %></span></p>
         </div>
