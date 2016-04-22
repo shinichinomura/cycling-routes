@@ -1,7 +1,7 @@
 // Place all the styles related to the current_locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body[data-contoller_name="current_locations"][data-action_name="new"] {
+body[data-controller_name="current_locations"][data-action_name="new"] {
   form {
     input[type=text] {
       border-width: 0 0 1px 0;

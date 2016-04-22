@@ -11,12 +11,13 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster+Two:700" %>
 
      <%= Gon::Base.render_data %>
+    <script defer src="https://maps.googleapis.com/maps/api/js<%= "?key=#{ENV['CYCLING_ROUTES_GOOGLE_API_KEY']}" if ENV['CYCLING_ROUTES_GOOGLE_API_KEY'] %>"></script>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "Slidebars/dist/slidebars.min.js" %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body data-contoller_name="<%= controller.controller_name %>" data-action_name="<%= controller.action_name %>">
+  <body data-controller_name="<%= controller.controller_name %>" data-action_name="<%= controller.action_name %>">
 
     <div id="sb-site">
       <div id="Header">

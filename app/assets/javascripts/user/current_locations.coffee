@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  window.addListener = ->
+  if $('body').data('controller_name') == 'current_locations' && $('body').data('action_name') == 'new'
     gm_geocoder = new google.maps.Geocoder()
 
     $input = $('#current_location')
