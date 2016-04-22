@@ -3,9 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $map = $('#RouteMap')
+  if $('body').data('controller_name') == 'destinations' && $('body').data('action_name') == 'show'
+    $map = $('#RouteMap')
 
-  window.initMap = ->
     dest_pos = { lat: $map.data('latitude'), lng: $map.data('longitude') }
     
     gm_map = new google.maps.Map($map.get(0))

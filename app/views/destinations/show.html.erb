@@ -11,8 +11,6 @@
   <div class="distance">距離：<span class="distance">（計算中...）</div>
   <div id="RouteMap" data-latitude="<%= @dest.latitude %>" data-longitude="<%= @dest.longitude %>" data-title="<%= @dest.name %>"></div>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap<%= "&key=#{ENV['CYCLING_ROUTES_GOOGLE_API_KEY']}" if ENV['CYCLING_ROUTES_GOOGLE_API_KEY'] %>"></script>
-
   <% if @dest.spots.present? %>
     <h2><%= @dest.name %>周辺のおすすめスポット</h2>
 
