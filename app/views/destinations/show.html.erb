@@ -21,7 +21,7 @@
         <% end %>
         <div class="text <% if spot.photo.present? %>with_photo<% else %>without_photo<% end %>">
           <h3><%= spot.name %></h3>
-          <%= simple_format spot.description, class: 'description' %></p>
+          <%= simple_format spot.description, class: 'description' %>
           <p class="display_in_map"><span class="display_in_map", data-name="<%= spot.name %>" data-latitude="<%= spot.latitude %>", data-longitude="<%= spot.longitude %>"><i class="fa fa-map-marker" aria-hidden="true"></i> 地図上に表示</span></p>
           <p class="url"><span><i class="fa fa-external-link" aria-hidden="true"></i> <%= link_to spot.url, spot.url, target: '_blank' %></span></p>
         </div>
