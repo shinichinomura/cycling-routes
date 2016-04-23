@@ -24,7 +24,12 @@
         <i id="MenuHandle" class="fa fa-2x fa-bars" aria-hidden="true"></i>
         <span class="site_name">Chari Route</span>
       </div>
+
       <%= yield %>
+
+      <div id="Footer">
+        <div id="Copyright"><i class="fa fa-copyright" aria-hidden="true"></i> Chari Routes</div>
+      </div>
     </div>
 
     <div class="sb-slidebar sb-left">
@@ -35,7 +40,6 @@
         </ul>
       </nav>
     </div>
-
     <%= render partial: 'shared_partials/ga_tag' if Rails.env.production? %>
   </body>
 </html>
