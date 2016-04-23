@@ -3,7 +3,7 @@
 <div id="MainContent">
   <%= form_tag(controller: :current_locations, action: 'create') do %>
     <p>
-    <%= text_field_tag :current_location %>
+    <%= text_field_tag :current_location, '', placeholder: '地名・住所（例：渋谷）' %>
     </p>
     <p class="suggested_address">
     現在地を「<span class="suggested_address"></span>」にセットします。よろしければ「送信」ボタンを押してください。
