@@ -5,7 +5,7 @@
 <div class="cover_photo" style="background-image: url('<%= @dest.photo %>');"></div>
 
 <div id="MainContent">
-  <%= simple_format @dest.description %>
+  <%= simple_format @dest.description, class: 'description' %>
 
   <h2>現在地から<%= @dest.name %>への行き方</h2>
   <div class="distance">距離：<span class="distance">（計算中...）</div>

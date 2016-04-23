@@ -23,6 +23,7 @@ div.destination {
 
   p {
     margin: .5em 1em;
+    line-height: 140%;
   }
 }
 
@@ -32,6 +33,10 @@ body[data-controller_name="destinations"][data-action_name="show"] {
     height: 180px;
     background-size: cover;
     background-position: center center;
+  }
+
+  p.description {
+    line-height: 140%;
   }
 
   div.distance {
