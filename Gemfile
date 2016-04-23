@@ -47,9 +47,10 @@ gem 'gon'
 
 gem 'fog'
 
+gem 'rollbar', '~> 2.8.3'
+
 group :production do
   gem 'rails_12factor'
-  gem 'rollbar', '~> 2.8.3'
 end
 
 group :development, :test do
