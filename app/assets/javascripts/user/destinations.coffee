@@ -92,4 +92,5 @@ $ ->
             location = results[0].geometry.location
             add_marker(location)
           )
+        $('html,body').animate({ scrollTop: $map.offset().top }, 'slow')
     )
