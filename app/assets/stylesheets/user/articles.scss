@@ -1,0 +1,9 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body[data-controller_name="articles"][data-action_name="show"] {
+  h2 {
+    margin: 1em 1em .5em 1em;
+    font-size: 100%;
+  }
+}
