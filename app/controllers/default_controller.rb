@@ -1,6 +1,6 @@
 class DefaultController < ApplicationController
   def index
-    redirect_to destinations_url
+    redirect_to articles_url
   end
 
   def sitemap
