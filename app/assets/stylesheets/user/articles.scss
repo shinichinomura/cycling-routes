@@ -31,6 +31,7 @@ body[data-controller_name="articles"][data-action_name="index"] {
     list-style-type: none;
     margin: 0 2em;
     padding: 0;
+    line-height: 140%;
   }
 }
 
@@ -40,4 +41,3 @@ body[data-controller_name="articles"][data-action_name="show"] {
     font-size: 100%;
   }
 }
-
