@@ -1,0 +1,20 @@
+<% content_for :title do %> 「特集」一覧<% end %>
+
+<h1>「特集」一覧</h1>
+
+<div id="MainContent">
+  <div class="articles">
+    <% @articles.each do |article| %>
+      <div class="article">
+        <div class="photo" style="background-image: url('<%= article.photo %>');"></div>
+        <h2><%= link_to article.title, article_path(article) %></h2>
+        <%= simple_format article.description %>
+        <ul class="destinations">
+          <% article.destinations.each do |dest| %>
+            <li><i class="fa fa-map-signs" aria-hidden="true"></i> <%= dest.name %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -22,13 +22,6 @@ div.destination {
   }
 }
 
-body[data-controller_name="destinations"][data-action_name="index"] {
-  h2 {
-    margin: 1em 1em .5em 1em;
-    font-size: 100%;
-  }
-}
-
 body[data-controller_name="destinations"][data-action_name="show"] {
   h2 {
     margin-top: 2em;
