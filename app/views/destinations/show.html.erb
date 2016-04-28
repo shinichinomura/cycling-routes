@@ -1,5 +1,8 @@
 <% content_for :title do %><%= @dest.name %><% end %>
 
+<% content_for :og_description do %><%= @dest.description %><% end %>
+<% content_for :og_image do %><%= @dest.photo %><% end %>
+
 <h1><%= @dest.name %></h1>
 
 <div class="cover_photo" style="background-image: url('<%= @dest.photo %>');"></div>

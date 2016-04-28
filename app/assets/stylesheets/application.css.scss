@@ -73,7 +73,7 @@ h2 {
 
 div.sb-slidebar {
   color: #ccc;
-  
+
   ul {
     margin: 0;
     padding: 0;
@@ -89,5 +89,16 @@ div.sb-slidebar {
         color: #ccc;
       }
     }
+  }
+}
+
+div.social_buttons {
+  > iframe, div {
+    vertical-align: top;
+  }
+
+  > iframe {
+    margin-top: 1px;
+    margin-right: .25em;
   }
 }

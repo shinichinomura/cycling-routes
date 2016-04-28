@@ -10,14 +10,32 @@
     <%= stylesheet_link_tag "Slidebars/dist/slidebars.min.css" %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster+Two:700" %>
 
-     <%= Gon::Base.render_data %>
+    <%= Gon::Base.render_data %>
     <script defer src="https://maps.googleapis.com/maps/api/js<%= "?key=#{ENV['CYCLING_ROUTES_GOOGLE_API_KEY']}" if ENV['CYCLING_ROUTES_GOOGLE_API_KEY'] %>"></script>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "Slidebars/dist/slidebars.min.js" %>
     <%= csrf_meta_tags %>
+
+    <meta property="og:url" content="<%= content_for?(:og_url) ? yield(:og_url) : request.url %>" />
+	  <meta property="og:type" content="website" />
+	  <meta property="og:title" content="<%= content_for?(:title) ? "#{yield(:title)} | サイクリング／ロングライドのコースを探そう！"  : "Chari Routes - サイクリング／ロングライドのコースを探そう！" %>" />
+    <% if content_for?(:og_description) %>
+	  <meta property="og:description" content="<%= content_for(:og_description) %>" />
+    <% end %>
+	  <% if content_for?(:og_image) %>
+    <meta property="og:image" content="<%= yield(:og_image) %>" />
+    <% end %>
   </head>
 
   <body data-controller_name="<%= controller.controller_name %>" data-action_name="<%= controller.action_name %>">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.6&appId=1107868672599124";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="sb-site">
       <div id="Header">

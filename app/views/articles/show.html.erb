@@ -1,5 +1,8 @@
 <% content_for :title do %><%= @article.title %><% end %>
 
+<% content_for :og_description do %><%= @article.description %><% end %>
+<% content_for :og_image do %><%= @article.photo %><% end %>
+
 <h1><%= @article.title %></h1>
 
 <div id="MainContent">
