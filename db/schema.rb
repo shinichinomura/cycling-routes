@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427114822) do
+ActiveRecord::Schema.define(version: 20160429155636) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -87,6 +87,18 @@ ActiveRecord::Schema.define(version: 20160427114822) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "related_links", force: :cascade do |t|
+    t.integer  "destination_id", limit: 4
+    t.string   "url",            limit: 255,               null: false
+    t.string   "title",          limit: 255
+    t.text     "description",    limit: 65535
+    t.integer  "display_order",  limit: 4,     default: 0, null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  add_index "related_links", ["destination_id"], name: "index_related_links_on_destination_id", using: :btree
+
   create_table "spots", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
@@ -102,4 +114,5 @@ ActiveRecord::Schema.define(version: 20160427114822) do
   add_foreign_key "article_destinations", "destinations"
   add_foreign_key "destination_spots", "destinations"
   add_foreign_key "destination_spots", "spots"
+  add_foreign_key "related_links", "destinations"
 end

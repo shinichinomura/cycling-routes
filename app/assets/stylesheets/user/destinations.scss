@@ -125,4 +125,39 @@ body[data-controller_name="destinations"][data-action_name="show"] {
     margin-top: 2em;
     text-align: center;
   }
+
+  ul.related_links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border: 1px dotted #ccc;
+      background-color: #fcfcfc;
+      padding: .25em .5em;
+      overflow: hidden;
+      margin-bottom: 1em;
+
+      h3 {
+        font-size: 90%;
+        margin: .5em;
+      }
+
+      p.description {
+        color: #999;
+        font-size: 90%;
+        line-height: 140%;
+        border-left: 5px solid #ddd;
+        padding-left: .5em;
+        margin: .5em;
+      }
+
+      p.url {
+        margin: .5em;
+        font-size: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }
