@@ -63,6 +63,9 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
   resources :destinations, only: [:show]
 
-  get 'current_locations/new' => 'current_locations#new', as: :new_current_location
-  post 'current_locations' => 'current_locations#create'
+  resources :current_locations, only: [:new, :create] do
+    collection do
+     post 'clear'
+    end
+  end
 end

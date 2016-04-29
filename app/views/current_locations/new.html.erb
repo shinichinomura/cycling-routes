@@ -13,4 +13,8 @@
     <%= submit_tag '送信', disabled: 'disabled' %>
     </p>
   <% end %>
+
+  <div class="clear-current_location">
+    <%= link_to clear_current_locations_path, method: 'post' do %><i class="fa fa-trash-o" aria-hidden="true"></i> 現在地の設定をクリアする<% end %>
+  </div>
 </div>

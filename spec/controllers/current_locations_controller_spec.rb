@@ -16,4 +16,16 @@ RSpec.describe CurrentLocationsController, type: :controller do
       expect(session[:current_location]).to eq('東京都渋谷区')
     end
   end
+
+  describe "POST #clear" do
+    before do
+      session[:current_location] = '東京都渋谷区'
+    end
+
+    it do
+      post :clear
+
+      expect(session[:current_location]).to eq nil
+    end
+  end
 end
