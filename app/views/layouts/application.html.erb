@@ -23,7 +23,7 @@
 	  <meta property="og:description" content="<%= content_for(:og_description) %>" />
     <% end %>
 	  <% if content_for?(:og_image) %>
-    <meta property="og:image" content="<%= yield(:og_image) %>" />
+    <meta property="og:image" content="<%= normalize_og_image(yield(:og_image)) %>" />
     <% end %>
   </head>
 
