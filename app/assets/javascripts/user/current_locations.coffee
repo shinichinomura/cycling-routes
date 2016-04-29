@@ -11,10 +11,27 @@ $ ->
     $input.on('change', ->
       gm_geocoder.geocode({ address: $input.val() }, (results, status) ->
         if status == 'OK'
-          console.log(results[0])
+          # console.log(results[0])
           $('span.suggested_address').text(results[0].formatted_address)
           $('#suggested_address').val(results[0].formatted_address)
           $('p.suggested_address').show()
           $('input[type=submit]').removeAttr('disabled')
         )
+    )
+
+    timer = null
+
+    $input.on('focus', ->
+      window.clearInterval(timer)
+      prev_val = ""
+      timer = window.setInterval( ->
+        new_val = $input.val()
+        if prev_val != new_val
+          $input.trigger('change')
+        prev_val = new_val
+      , 1000)
+    )
+
+    $input.on('blur', ->
+      window.clearInterval(timer)
     )
