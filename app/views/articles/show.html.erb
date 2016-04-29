@@ -11,7 +11,8 @@
       <div class="destination">
         <div class="photo" style="background-image: url('<%= dest.photo %>');"></div>
         <h2><%= link_to dest.name, destination_path(dest) %></h2>
-        <%= simple_format dest.description %>
+        <%= simple_format dest.short_description.gsub(/[\r\n]/, '') %>
+        <p class="more"><%= link_to destination_path(dest) do %><i class="fa fa-caret-right" aria-hidden="true"></i> 続きを読む<% end %></p>
       </div>
     <% end %>
   </div>
