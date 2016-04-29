@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
   describe "#normalize_og_image" do
-    before do
-      # allow(helper).to receive(:current_user).and_return(account)
-    end
-
     subject { helper.normalize_og_image(path) }
 
     context "ローカルファイルの場合" do
