@@ -21,6 +21,8 @@ test:
   <<: *default
   username: root
   database: cycling-routes_test
+  encoding: utf8
+  password: ""
 
 production:
   <<: *default
