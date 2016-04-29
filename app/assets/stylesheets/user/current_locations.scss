@@ -38,4 +38,9 @@ body[data-controller_name="current_locations"][data-action_name="new"] {
       font-weight: bold;
     }
   }
+
+  div.clear-current_location {
+    margin-top: 3em;
+    text-align: right;
+  }
 }
