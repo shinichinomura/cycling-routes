@@ -14,6 +14,19 @@
   <div class="distance">距離：<span class="distance">（計算中...）</div>
   <div id="RouteMap" data-latitude="<%= @dest.latitude %>" data-longitude="<%= @dest.longitude %>" data-title="<%= @dest.name %>"></div>
 
+  <% if @dest.related_links.present? %>
+    <h2>関連リンク</h2>
+    <ul class="related_links">
+      <% @dest.related_links.each do |link| %>
+        <li>
+          <h3><%= link.title %></h3>
+          <p class="description"><%= link.description %></p>
+          <p class="url"><span><i class="fa fa-external-link" aria-hidden="true"></i> <%= link_to link.url, link.url, target: '_blank' %></span></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <% if @dest.spots.present? %>
     <h2><%= @dest.name %>周辺のおすすめスポット</h2>
 

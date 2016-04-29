@@ -3,6 +3,7 @@ class Destination < ActiveRecord::Base
 
   has_many :destination_spots
   has_many :spots, through: :destination_spots
+  has_many :related_links
 
   def short_description(min_length: 100)
     if description.length < min_length
